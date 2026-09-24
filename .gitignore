@@ -5,3 +5,7 @@
 *.bak
 *.orig
 .zhpack-*
+
+# Python 字节码（仓库内含 modules/patch_avm.py，脚本运行后会生成）
+__pycache__/
+*.py[cod]
