@@ -1,0 +1,7 @@
+# 本地备份 / 临时产物
+/backup/
+/tmp/
+*.tmp
+*.bak
+*.orig
+.zhpack-*

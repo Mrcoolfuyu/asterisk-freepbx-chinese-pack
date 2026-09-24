@@ -1,0 +1,16 @@
+--- a/wakeglobal.php
++++ b/wakeglobal.php
+@@ -18,12 +18,13 @@
+ 		$this->init();
+ 	}
+ 
+ 	private function init()
+ 	{
+ 		$this->AGI->answer();
++	$this->AGI->set_variable('CHANNEL(language)', 'zh_CN');
+ 	}
+ 
+ 	public function hangup()
+ 	{
+ 		$this->AGI->hangup();
+ 	}

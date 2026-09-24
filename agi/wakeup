@@ -1,0 +1,227 @@
+#!/usr/bin/env php
+<?php
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
+//	Copyright 2013 Schmooze Com Inc.
+//
+
+// Bootstrap FreePBX but don't include any modules (so you won't get anything
+// from the functions.inc.php files of all the modules.)
+//
+$restrict_mods = true;
+include '/etc/freepbx.conf';
+set_time_limit(0);
+error_reporting(0);
+
+require_once "wakeglobal.php";
+$hotelwakeup = new AGI_Hotelwakeup();
+$select_extension = $hotelwakeup->getOriginExtension();
+
+usleep(500);
+$hotelwakeup->sim_playback("welcome");
+
+if($hotelwakeup->getSetting('operator_mode'))
+{
+	if( in_array($hotelwakeup->getOriginExtension(), $hotelwakeup->getSetting('operator_extensions')))
+	{
+		// Play the full prompt without digit escape (sim_playback), then collect digits. Using
+		// sim_background for the whole chain skips remaining clips once extensionlength digits
+		// are pressed during an earlier sound, and the default prompt never reached then-press-pound.
+		$hotelwakeup->sim_playback("operatorSelectExt");
+		$select_extension = $hotelwakeup->sim_background("", "0123456789", $hotelwakeup->getSetting('extensionlength'));
+
+		//TODO: check if the extension exists
+		if(empty($select_extension) || strlen($select_extension) > $hotelwakeup->getSetting('extensionlength'))
+		{
+			$hotelwakeup->sim_playback("goodbye");
+			$hotelwakeup->hangup();
+			return;
+		}
+
+		$params = array(
+			"number" => $select_extension,
+		);
+		$hotelwakeup->sim_playback("operatorEntered", $params);
+	}
+}
+
+//TODO: needs to use AMPUSER through macro-caller-id
+wakeupMenu($select_extension);
+
+
+/**
+ * The WakeUp Administration Menu
+ * @param  string $number The "number" to work with
+ */
+function wakeupMenu($number)
+{
+	global $hotelwakeup;
+
+	$digit = $hotelwakeup->sim_background("wakeupMenu", "0123456789", 1);
+	switch($digit)
+	{
+		case 1:
+			wakeupAdd($number);
+			break;
+
+		case 2:
+			wakeupList($number);
+			break;
+		
+		default:
+			$hotelwakeup->sim_playback("optionInvalid");
+			wakeupMenu($number);
+			break;
+	}
+}
+
+/**
+ * Add a wakeup menu
+ * @param  string $number The "number" to work with
+ */
+function wakeupAdd($number, $retry = 0)
+{
+	global $hotelwakeup;
+
+	$time = $hotelwakeup->sim_background("wakeupAdd", "0123456789", 3);
+	if(strlen($time) > 1)
+	{
+		$last = '';
+		if(strlen($time) < 4)
+		{
+			$ret = $hotelwakeup->wait_for_digit(6000);
+			if ($ret['result'] > 0)
+			{
+				$last = chr($ret['result']);
+				$last = $last != '#' ? $last : '';
+			}
+		}
+		$times = (string)($time.$last);
+		$time = (int)($time.$last);
+	}
+	$times = trim($times);
+	$type = (strlen($times) == 4) ? 24 : 12;
+
+	$needRetrying = false;
+	if (trim($times) == "")
+	{
+		$needRetrying = true;
+	}
+	elseif($time > 2400 || $time < 0)
+	{
+		$needRetrying = true;
+		$hotelwakeup->sim_playback("optionInvalid");
+	}
+
+	switch($type)
+	{
+		case 12:
+			$td = $hotelwakeup->sim_background("wakeupAddType12H", "0123456789", 1);
+			switch($td)
+			{
+				case 1:
+					if($time > 1159) { $time -= 1200; }
+				break;
+				
+				case 2:
+					if($time < 1159) { $time += 1200; }
+				break;
+
+				default:
+					$needRetrying = true;
+					$hotelwakeup->sim_playback("optionInvalid");
+				break;
+			}
+		break;
+		case 24:
+		break;
+	}
+
+
+	if ($needRetrying)
+	{
+		$retry += 1;
+		if ($retry >= 3)
+		{
+			wakeupMenu($number, $retry);
+		}
+		else
+		{
+			wakeupAdd($number, $retry);
+		}
+		return;
+	}
+
+	$time_wakeup = $hotelwakeup->convert_time($time);
+	if($time_wakeup === false)
+	{
+		$hotelwakeup->sim_playback("error");
+		$hotelwakeup->hangup();
+		return false;
+	}
+
+	$time_now = time();
+	if ($time_wakeup <= $time_now)
+	{
+		$time_wakeup += 86400; // Add One Day on
+	}
+
+	$hotelwakeup->addWakeup($time_wakeup, $number);
+	
+	$param = array("time" => $time_wakeup);
+	$hotelwakeup->sim_playback("wakeupAddOk", $param);
+
+	wakeupMenu($number);
+}
+
+/**
+ * List all wakeup calls for said number
+  * @param  string $number the "number" to work with
+ */
+function wakeupList($number)
+{
+	global $hotelwakeup;
+	$calls = $hotelwakeup->getAllWakeup($number);
+
+	$param = array(
+		"count" => count($calls)
+	);
+	$hotelwakeup->sim_playback($param['count'] == 0 ? "wakeupListEmpty" : "wakeupList", $param);
+
+	foreach($calls as $id => $call) 
+	{
+		$param = array(
+			"number" => $id + 1,
+			"time" 	 => $call['timestamp'],
+		);
+		$hotelwakeup->sim_playback("wakeupListInfoCall", $param);
+
+		$digit = $hotelwakeup->sim_background("wakeupListMenu", "0123456789", 1);
+		switch($digit)
+		{
+			case 1:
+				$hotelwakeup->removeWakeup($call['filename']);
+				$hotelwakeup->sim_playback("wakeupListCancelCall");
+				wakeupList($number);
+				return;
+			break;
+
+			case 2:
+				//Next
+				break;
+
+			case 3:
+				wakeupMenu($number);
+				return;
+			break;
+
+			default:
+			$hotelwakeup->sim_playback("optionInvalid");
+				wakeupList($number);
+				return;
+			break;
+		}
+	}
+	wakeupMenu($number);
+}
+
+

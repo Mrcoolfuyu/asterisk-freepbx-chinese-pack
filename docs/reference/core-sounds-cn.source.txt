@@ -1,0 +1,488 @@
+agent-alreadyon:这个坐席已经登录.请输入您的坐席号并以井号键结束
+agent-incorrect:登录不正确.请输入您的坐席号并以井号键结束.
+agent-loggedoff:坐席登出.
+agent-loginok:坐席登录.
+agent-newlocation:请输入一个新的分机号,并以井号键结束
+agent-pass:请输入您的密码并以井号键结束
+agent-user:坐席登录.请输入您的坐席号并以井号键结束.
+auth-incorrect:密码不正确.请输入您的密码并以井号键结束.
+auth-thankyou:谢谢您.
+conf-adminmenu-162:请按1号键以静音你自己或者解除静音,2号键以锁定或者解锁会议,3号键以请出最近进入的用户,4号键或者6号键以减少或者增加会议音量,5号键以延长会议,7号键或者9号键减少或者增加您的讲话音量,或者8号键以退出.
+conf-adminmenu-18:请按1号键以静音你自己或者解除静音,2号键以锁定或者解锁会议,3号键以请出最近进入的用户,4号键或者6号键以减少或者增加会议音量,5号键以延长会议,7号键或者9号键减少或者增加您的讲话音量,或者8号键以查看更多选项.
+conf-adminmenu-menu8:请按1号键以列出当前在会议中的用户,2号键以踢出所有非管理员用户,3号键以静音或者解除静音所有非管理员用户,4号键以录音本次会议,或者8号键以退出此菜单并返回会议.
+conf-adminmenu:请按1号键以静音你自己或者解除静音,2号键以锁定或者解锁会议,3号键以请出最近进入的用户,4号键或者6号键以减少或者增加会议音量,7号键或者9号键减少或者增加您的讲话音量,或者8号键以退出.
+confbridge-begin-glorious-a:会议将在会议主席加入后开始.
+confbridge-begin-glorious-b:会议将在会议主席加入后开始.
+confbridge-begin-glorious-c:会议将在议主席加入后开始.
+confbridge-begin-leader:会议将在会议主席加入后开始.
+confbridge-conf-begin:会议现在开始
+confbridge-conf-end:会议已经结束
+confbridge-dec-list-vol-in:为降低来自其他与会者的音频音量
+confbridge-dec-list-vol-out:以降低来自其他与会者的音频音量.
+confbridge-dec-talk-vol-in:为降低您向其他与会者的讲话音量
+confbridge-dec-talk-vol-out:以降低您向其他与会者的讲话音量.
+confbridge-has-joined:已经加入会议.
+confbridge-has-left:已经退出会议.
+confbridge-inc-list-vol-in:为增加来自其他与会者的音频音量
+confbridge-inc-list-vol-out:已增加来自其他与会者的音频音量.
+confbridge-inc-talk-vol-in:为增加您向其他与会者的讲话音量
+confbridge-inc-talk-vol-out:以增加您向其他与会者的讲话音量.
+confbridge-invalid:您已输入一个无效的选项.
+confbridge-leave-in:为离开会议
+confbridge-leave-out:离开会议.
+confbridge-locked:会议现在被锁定.
+confbridge-lock-extended:锁定或者解锁会议.当会议被锁定时只有会议管理员才能加入
+confbridge-lock-in:为锁定,或者解锁会议
+confbridge-lock-no-join:会议当前被锁定,你不能加入.
+confbridge-lock-out:锁定,或者解锁会议.
+confbridge-menu-exit-in:退出菜单…
+confbridge-menu-exit-out:以退出菜单.
+confbridge-muted:您现在已被静音.
+confbridge-mute-extended:静音,或者解除静音您自己.当您被静音时,您不能向其他与会者发送声音.但您仍然可以听到其他未被静音的与会者的声音.
+confbridge-mute-in:静音或者解除静音您自己
+confbridge-mute-out:静音或者解除静音您自己.
+confbridge-only-one:当前只有一位其他与会者在会议中.
+confbridge-only-participant:当前您是会议中唯一的与会者.
+confbridge-participants:会议中.
+confbridge-pin-bad:您已经多次输入了无效的个人识别码.
+confbridge-pin:请输入您的个人识别码并以井号键结束.
+confbridge-removed:您已被从会议中移除.
+confbridge-remove-last-in:移出最近加入会议的与会者
+confbridge-remove-last-out:移出最近加入会议的与会者.
+confbridge-rest-list-vol-in:重置会议音频音量到默认水平
+confbridge-rest-list-vol-out:重置会议音频音量到默认水平.
+confbridge-rest-talk-vol-in:重置您的发言音量到默认水平
+confbridge-rest-talk-vol-out:重置您的发言音量到默认水平.
+confbridge-there-are:当前有
+confbridge-unlocked:会议现在被解锁.
+confbridge-unmuted:您已被解除静音.
+conf-enteringno:您正输入会议室号码
+conf-errormenu:无效的选项
+conf-extended:会议已被延时.
+conf-getchannel:请输入通道号并以井号键结束.
+conf-getconfno:请输入您的会议号并以井号键结束.
+conf-getpin:请输入会议密码.
+conf-hasjoin:现在进入会议.
+conf-hasleft:已经离开会议.
+conf-invalidpin:这是一个无效的会议密码.
+conf-invalid:这是一个无效的会议号码.请重试.
+conf-kicked:您已经被从本次会议中踢出.
+conf-leaderhasleft:会议主席已经离开会议.
+conf-lockednow:会议现在开始锁定
+conf-locked:本次会议已锁定!
+conf-muted:您现在被静音
+conf-noempty:目前没有空闲的会议.
+conf-nonextended:会议无法被延长.
+conf-now-muted:会议现在开始静音.
+conf-now-recording:会议现在开始录音.
+conf-now-unmuted:会议现在开始解除静音.
+conf-onlyone:目前只有一个其他与会者在会议中.
+conf-onlyperson:前您是本次会议中唯一的与会者.
+conf-otherinparty:会议进行中
+conf-placeintoconf:您将马上进入会议.
+conf-roll-callcomplete:与会者列表播放完毕.
+conf-thereare:当前.
+conf-unlockednow:会议现在被解锁
+conf-unmuted:您现在被解除静音
+conf-usermenu-162:请按1号键以静音你自己或者解除静音,4号键或者6号键以减少或者增加会议音量,5号键以延长会议,7号键或者9号键减少或者增加您的讲话音量,或者8号键以退出
+conf-usermenu:请按1号键以静音你自己或者解除静音,4号键或者6号键以减少或者增加会议音量,7号键或者9号键减少或者增加您的讲话音量,或者8号键以退出
+conf-userswilljoin:用户将加入会议.
+conf-userwilljoin:用户将加入会议.
+conf-waitforleader:会议将在主席加入后开始.
+demo-abouttotry:我将尝试通过Inter-AsteriskExchange连接到Digium的演示服务器.服务器必须已经连接到因特网才能连接.请在我尝试连接时耐心等待.
+demo-congrats:祝贺您已经成功安装并运行Asterisk开源PBX.您同时也安装了一组能帮助您开始工作的声音和配置样本.就像一个普通的PBX,你可以通过按键浏览这个演示.如果你是使用控制台通道设备代替真正的电话,你可以使用dial,answer,和hangup命令来模拟标准电话的动作.
+demo-echodone:回声测试已完成.
+demo-echotest:您正进入回声测试.在这种模式下,你发出的所有声音都将在系统收到时马上回放给你.这个测试的目的是让你感受一下你和测试服务器之间的声音延时.你可以通过挂机或者按井号键结束测试.
+demo-enterkeywords:请输入一个或者多个关键词,用星号键分隔并按井号键完成.
+demo-instruct:如果您想了解更多Asterisk的技术信息,请按2号键.如果您想测试Asterisk的VoIP性能,您可以拨500尝试通过Inter-AsteriskExchange或者IAX连接到Digium的演示服务器.为使测试能运行,您需要连接到互联网并最少有28.8k的带宽.运行回声测试请拨600.这个测试在你连接到远程Asterisk服务器时特别有用.示例配置也含有一个分机号为1234,密码为4242的用户.这个用户已配置成被呼叫时响铃控制台.如果您拨1234您将振铃控制台.如果控制台忙或者或者不可用,您将会被提示留言.拨分机号8500可进入语音信箱检查这个用户的信息.最后,您可按号键井号键从PBX断开.
+demo-moreinfo:Asterisk是在Linux系统上运行的全功能PBX和IVR平台.访问www.asterisk.org以获得更多信息.
+demo-nogo:我无法建立到Digium公司演示Asterisk服务器的连接.您可在Asterisk控制台查看到有用的排错信息.
+demo-nomatch:对不起,没有查到匹配关键字的信息.
+demo-thanks:再见.谢谢您试用Asterisk开源PBX.
+dictate/both_help:按星号键暂停,按井号键输入一个新的听写文件名
+dictate/enter_filename:输入一个数字的听写文件名并以井号键结束或者直接按井号键退出
+dictate/forhelp:按0号键获得帮助
+dictate/paused:已暂停
+dictate/pause:暂停
+dictate/playback_mode:回放模式
+dictate/playback:回放
+dictate/play_help:按1号键切换到录音模式,按2号键切换到快速回放,按7号键回退,按8号键快进
+dictate/record_help:按1号键切换到回放模式,,按8号键以截断文件并重新开始
+dictate/record_mode:录音模式
+dictate/record:录音
+dictate/truncating_audio:截断音频
+digits/0:零
+digits/10:十
+digits/11:十一
+digits/12:十二
+digits/13:十三
+digits/14:十四
+digits/15:十五
+digits/16:十六
+digits/17:十七
+digits/18:十八
+digits/19:十九
+digits/1:一
+digits/20:二十
+digits/2:二
+digits/30:三十
+digits/3:三
+digits/40:四十
+digits/4:四
+digits/50:五十
+digits/5:五
+digits/60:六十
+digits/6:六
+digits/70:七十
+digits/7:七
+digits/80:八十
+digits/8:八
+digits/90:九十
+digits/9:九
+digits/a-m:上午
+digits/at:在
+digits/billion:十亿
+digits/day-0:星期日
+digits/day-1:星期一
+digits/day-2:星期二
+digits/day-3:星期三
+digits/day-4:星期四
+digits/day-5:星期五
+digits/day-6:星期六
+digits/dollars:美元
+digits/h-10:第十
+digits/h-11:第十一
+digits/h-12:第十二
+digits/h-13:第十三
+digits/h-14:第十四
+digits/h-15:第十五
+digits/h-16:第十六
+digits/h-17:第十七
+digits/h-18:第十八
+digits/h-19:第十九
+digits/h-1:第一
+digits/h-20:第二十
+digits/h-2:第二
+digits/h-30:第三十
+digits/h-3:第三
+digits/h-40:第四十
+digits/h-4:第四
+digits/h-50:第五十
+digits/h-5:第五
+digits/h-60:第六十
+digits/h-6:第六
+digits/h-70:第七十
+digits/h-7:第七
+digits/h-80:第八十
+digits/h-8:第八
+digits/h-90:第九十
+digits/h-9:第九
+digits/h-billion:第十亿
+digits/h-hundred:第一百
+digits/h-million:第一百万
+digits/h-thousand:第一千
+digits/hundred:百
+digits/million:百万
+digits/minus:负
+digits/mon-0:一月
+digits/mon-10:十一月
+digits/mon-11:十二月
+digits/mon-1:二月
+digits/mon-2:三月
+digits/mon-3:四月
+digits/mon-4:五月
+digits/mon-5:六月
+digits/mon-6:七月
+digits/mon-7:八月
+digits/mon-8:九月
+digits/mon-9:十月
+digits/oclock:点
+digits/oh:哦
+digits/p-m:下午
+digits/pound:井号键
+digits/star:星号键
+digits/thousand:千
+digits/today:今天
+digits/tomorrow:明天
+digits/yesterday:昨天
+dir-firstlast:部门的第一个字母或者名
+dir-first:部门的第一个字母或者名
+dir-instr:如果这是你要找的人,请按1号键,如果不是,请按星号键
+dir-intro-fn:欢迎访问目录服务.请输入部门的前3位字母.7号键表示Q,9号键表示Z.
+dir-intro:欢迎访问目录服务.请输入部门的名称的前3个字母.用键盘的7号键表示Q,9号键表示Z.
+dir-last:部门的名称
+dir-multi1:按
+dir-multi2:获得
+dir-multi3:分机号
+dir-multi9:按9号键获取更多条目.
+dir-nomatch:目录中没有符合您搜索的条目.
+dir-nomore:目录中没有更多符合您搜索的条目.
+dir-pls-enter:请输入第一个
+dir-usingkeypad:使用您的电话键盘.用键盘的7号键表示Q,9号键表示Z.
+dir-welcome:欢迎访问电话目录服务
+followme/call-from:呼入的电话来自
+followme/no-recording:您有一个呼入的电话.
+followme/options:按1号键接听呼叫,或者按2号键拒绝.
+followme/pls-hold-while-try:请稍等,我正在尝试定位您呼叫的用户.
+followme/sorry:对不起,我无法定位您正呼叫的用户.
+followme/status:您正在呼叫的用户不在座位上;我将尝试为您找到他.
+hello-world:您好
+hours:小时
+invalid:对不起,这不是一个有效的分机号.请重试
+letters/ascii123:左大括号
+letters/ascii124:竖线符号
+letters/ascii125:右大括号
+letters/ascii126:波浪线符号
+letters/ascii34:双引号
+letters/ascii36:美元符号
+letters/ascii37:百分号
+letters/ascii38:与字符
+letters/ascii39:单引号
+letters/ascii40:左括号
+letters/ascii41:右括号
+letters/ascii42:星号
+letters/ascii44:逗号
+letters/ascii58:冒号
+letters/ascii59:分号
+letters/ascii60:小于
+letters/ascii62:大于
+letters/ascii63:问号
+letters/ascii91:左方括号
+letters/ascii92:反斜杠
+letters/ascii93:右方括号
+letters/ascii94:脱字号
+letters/ascii95:下划线
+letters/ascii96:反引号
+letters/dash:中划线
+letters/dollar:美元符号
+letters/dot:句点号
+letters/equals:等号
+letters/exclaimation-point:感叹号
+letters/plus:加号
+letters/slash:斜杠
+letters/space:空格
+lowercase:小写
+minutes:分
+pbx-invalidpark:对不起，此分机没有保持的呼叫，请重新输入分机号
+pbx-parkingfailed:呼叫保持失败
+pbx-transfer:转接
+privacy-incorrect:对不起，号码不正确
+privacy-prompt:请输入区号和电话号码
+privacy-thankyou:谢谢！
+privacy-unident:您呼叫的群组不接受未经确认的呼叫
+priv-callee-options:允许此呼叫请按1允许此呼叫留言请按2.将此呼叫转接到自动应答菜单请按3，将此呼叫放入“请勿打扰”列表请按4，允许此呼叫，但此次只允许语音留言请按5
+priv-callpending:我有一个等待接通的呼叫，详情如下：
+priv-introsaved:感谢您的等待，我们正在转接您的来电
+priv-recordintro:请在听到“滴声后说出您的名字
+queue-callswaiting:请稍等，您的呼叫正在接通
+queue-holdtime:您需要等待的时间
+queue-less-than:少于
+queue-minute:分钟
+queue-minutes:分钟
+queue-periodic-announce:所有坐席忙，请不要挂机，如有空闲坐席，我们将优先接听您的电话
+queue-quantity1:目前队列中有多于
+queue-quantity2:呼叫正在等待接听
+queue-reporthold:保持时间
+queue-seconds:秒
+queue-thankyou:感谢您的耐心等待
+queue-thereare:您当前的呼叫号码是
+queue-youarenext:您是队列中的第一个用户，您的呼叫将马上被接听
+screen-callee-options: 针对当前呼叫，马上接听请按1，请其留言请按2，将其转入自动语音应答菜单请按3，将其转入请勿打扰请按4.
+seconds:秒
+spy-agent:坐席
+spy-console:控制台
+
+ss-noservice:您呼叫的号码无法接通，请检查确认或重拨
+transfer:请稍等，您的呼叫正在被转接
+tt-allbusy:所有座席人员忙，请耐心等待，我们将尽快为您接通
+uppercase:大写
+vm-advopts:高级选项请按3
+vm-and:和
+vm-calldiffnum:输入其它的号码请按2
+vm-changeto:请选择您需要的文件夹
+vm-Cust1:文件夹5
+vm-Cust2:文件夹6
+vm-Cust3:文件夹7
+vm-Cust4:文件夹8
+vm-Cust5:文件夹9
+vm-deleted:留言已删除
+vm-delete:删除该留言请按7
+vm-dialout:请等待，我们将接通您的呼叫
+vm-duration:本条留言共
+vm-enter-num-to-call:请输入您要呼叫的号码
+vm-extension:分机
+vm-Family:家庭
+vm-first:第一条
+vm-forward-multiple:转交这条信息请按1，添加其它需要转交的分机请按2
+vm-forwardoptions:预览这条信息请按1，直接转交请按2
+vm-forward:直接输入分机号请按1，使用目录服务请按2
+vm-Friends:朋友
+vm-from-extension: 留言来自分机
+vm-from: 来自
+vm-from-phonenumber:留言来自电话号码
+vm-goodbye:再见
+vm-helpexit:请求帮助请按星号键，退出请按井号键
+vm-INBOX:新的
+vm-incorrect:登录错误
+vm-incorrect-mailbox:登录错误，请输入您的信箱
+vm-instructions:听取您的留言请按1，收听时按井号键可退出收听
+vm-intro:请在听到“嘀”声后留言，结束请挂机或按井号键
+vm-invalidpassword:密码不正确，请重试
+vm-invalid-password:您输入的密码太短，请重新输入
+vm-isonphone:正在通话
+vm-isunavail:无法接通
+vm-last:最后一条
+vm-leavemsg:留言请按5
+vm-mailboxfull:对不起，此用户的语音邮箱已不能接受更多的留言
+vm-marked-nonurgent:紧急标记已删除
+vm-marked-urgent:留言被标记为紧急
+vm-message:留言
+vm-messages:留言
+vm-minutes:分钟
+vm-mismatch:两次输入的密码不相符，请重新输入
+vm-msgforwarded:留言已转交
+vm-msginstruct:收听下一条留言请按6，重听留言请按5，收听上一条留言请按4，删除或恢复留言请按0，退出留言请按井号键
+vm-msgsaved:您的留言已保存
+vm-newpassword:请输入您的新密码，并按井号键确认
+vm-newuser:欢迎进入邮件系统，首先我们将指导您进行一些简单的配置
+vm-next:收听下一条留言请按6
+vm-nobodyavail:您呼叫的用户无人接听
+vm-nobox:发送者没有语音信箱，你无法发送语音邮件
+vm-nomore:没有更多的留言
+vm-no:没有
+vm-nonumber:留言人的号码未知
+vm-num-i-have:我的号码是
+vm-Old: 旧
+vm-onefor-full:按1完整收听
+vm-onefor:按1
+vm-options:录制无法接通时语音信息请按1，录制忙线时语音信息请按2，录制您的名字信息请按3，录制您的临时欢迎语请按4，更改密码请按5，返回主菜单请按星号键
+vm-opts-full:访问文件夹中的留言请按2，为其它语音信箱录制语音信息请按3，欢迎语及密码管理请按0.
+vm-opts:更改文件夹，请按2，高级选项请按3，其它语音信箱选项请按0
+vm-passchanged:您的密码已更改成功
+vm-password:请输入密码，按井号键结束
+vm-pls-try-again:请重试
+vm-press:按
+vm-prev:收听上一条留言请按4
+vm-reachoper:转接到操作员请按0
+vm-rec-busy:请在“嘀”声后留下您的占线信息，结束后请按井号键
+vm-received:接收到的
+vm-rec-name:请在“嘀”声后说出您的名字，结束后请按井号键
+vm-record-prepend:请在“嘀”声后录制您的转接信息，结束后请按井号键
+vm-rec-temp:请在“嘀”声后录制您的临时信息，结束后请按井号键
+vm-rec-unv:请在“嘀”声后录制您的无法接通信息，结束后请按井号键
+vm-reenterpassword:请再次输入您的密码，结束后请按井号键
+vm-repeat:重新听该留言请按5
+vm-review-nonurgent:清除当时留言的紧急标记请按4
+vm-review:接受当前语言信息请按1，收听当前语音信息请按2，重新录制请按3，
+vm-review-urgent:将当前留言标记为紧急请按4
+vm-saved:已保存
+vm-savedto:保存为
+vm-savefolder:将当前留言保存在哪个文件夹？
+vm-savemessage:保存该留言请按9
+vm-saveoper:按1保存录音，或继续保持
+vm-sorry:非常抱歉，请按正确的按键
+vm-star-cancel:按星号键退出
+vm-starmain:返回到主菜单请按星号键
+vm-tempgreetactive:您的临时欢迎语已正式使用
+vm-tempgreeting2:录制新的欢迎语请按1，删除欢迎语请按2
+vm-tempgreeting:录制新的欢迎语请按1
+vm-tempremoved:欢迎语被删除
+vm-then-pound:然后按井号键
+vm-tmpexists:临时的欢迎语将覆盖您正式的欢迎语
+vm-tocallback:呼叫留言人请按2
+vm-tocallnum:呼叫这个号码请按1
+vm-tocancelmsg:按星号键退出这条留言
+vm-tocancel:或按井号键退出
+vm-toenternumber:输入号码请按1
+vm-toforward:转交这条留言请按8
+vm-tohearenv:听取语音信封请按3
+vm-tomakecall: 拨打电话请按4
+vm-tooshort:您的留言太短
+vm-toreply:回复请按1
+vm-torerecord:录制您的语音留言请按3
+vm-undeleted:留言被恢复
+vm-undelete: 恢复这条留言请按7
+vm-unknown-caller:来自一个未知的呼叫
+vm-Urgent:紧急
+vm-whichbox:请输入语音信箱号码
+vm-youhave:您有
+activated: 已激活.
+added: 已添加
+all-circuits-busy-now: 所有的线路均繁忙
+astcc-followed-by-the-pound-key: 然后按井号键
+at-tone-time-exactly: 听到提示音时，时间将正好是…
+basic-pbx-ivr-main: 感谢您致电超级无敌公司——银河系首屈一指的优质产品供应商。请直拨分机号。如需洽谈销售合作，请按 1；如需咨询客服专员，请按 2；如涉及财务或应收账款事宜，请按 3；如需查询公司通讯录，请按 4；如需转接人工服务，请按 0。
+call-forwarding: 呼叫转移
+call-fwd-no-ans: 无应答呼叫转移
+call-fwd-on-busy: 遇忙呼叫转移
+call-fwd-unconditional: 无条件呼叫转移。
+call-waiting: 正在通话等待.
+calling: 正在接通.
+cancelled: 已取消
+cannot-complete-as-dialed: 您拨打的号码无法接通。
+check-number-dial-again: 请核对号码，然后再次拨打。
+conf-full: 会议已满员.
+confbridge-binaural-off: 已禁用 3D 音频
+confbridge-binaural-on: 已启用 3D 音频
+de-activated: 已取消.
+disabled: 已禁用.
+do-not-disturb: 请勿打扰
+enabled: 已启用
+enter-num-blacklist: 请输入要列入黑名单的号码。
+entr-num-rmv-blklist: 请输入要移出黑名单的号码。
+extension:分机.
+feature-not-avail-line: 这个功能在这条线路上无法启用.
+for: 为了
+from-unknown-caller: 来自未知号码
+goodbye:再见
+hello: 您好.
+if-correct-press: 如果正确，请按...
+im-sorry: 我很抱歉.
+info-about-last-call: 最后通话的信息.
+is-in-use: 正在使用.
+is-set-to: 设置为.
+is: 是.
+location: 地点.
+minute: 分
+num-was-successfully: 这个号码被成功的..
+number-not-answering: 这个号码没有接听
+number: 号码.
+one-moment-please: 稍等.
+pbx-invalid: 对不起，分机不正确，请重试
+please-try-again: 请重试.
+please-try-call-later: 请稍后再拨打
+pls-hold-while-try: 请在我们尝试接通您时不要挂机.
+pls-try-call-later: 请稍后再拨打.
+pm-invalid-option: 无效的选项，请重试.
+privacy-to-blacklist-last-caller: 上一位来电者是
+removed: 已删除
+second: 秒
+simul-call-limit-reached: 已达到并发通话限制
+something-terribly-wrong: 有些严重的问题!
+sorry-youre-having-problems: 对不起，您有些问题.
+sorry: 对不起
+speed-dial-empty: 您拨打的快速拨号键盘条目是空的.
+speed-dial: 快速拨号.
+telephone-number: 电话号码.
+time: 时间.
+to-call-this-number: 如需拨打这个号码.
+to-extension: 以延期.
+to-listen-to-it: 以收听.
+to-rerecord-it: 以重新录制
+tt-monkeysintro: 他们被猴子拿跑了
+tt-somethingwrong: 有些严重的问题
+tt-weasels: 黄鼠狼好像把我们的电话系统吃掉了
+unidentified-no-callback: 未识别或已隐藏，因此无法回拨。
+vm-for: 收听
+vm-login: 请输入您想查看的信箱分机号
+vm-theperson: 分机
+vm-Work: 工作
+with: 和
+you-entered: 您已进入
+your: 您的
+vm-you: 您
+vm-have: 有
+vm-tong: 条
+vm-haveno: 没有
+vm-listen: 收听
+press: 请按

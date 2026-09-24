@@ -1,0 +1,104 @@
+[custom-speakingclock-zh]
+exten => s,1,Answer()
+ same => n,Set(CHANNEL(language)=zh_CN)
+ same => n,Playback(custom/beijing-shijian)         ; 只在第一次摘机时读“北京时间”
+ 
+ ; --- 循环入口 ---
+ same => n(start),Set(H=${STRFTIME(${EPOCH},,%H)})
+ same => n,Set(M=${STRFTIME(${EPOCH},,%M)})
+ same => n,Set(S=${STRFTIME(${EPOCH},,%S)})
+ same => n,Set(H12=$[${H} % 12])
+ same => n,GotoIf($[${H12} = 0]?fixzero:period)
+ same => n(fixzero),Set(H12=12)
+ same => n(period),GotoIf($[${H} < 6]?dawn)
+ same => n,GotoIf($[${H} < 12]?morning)
+ same => n,GotoIf($[${H} < 13]?noon)
+ same => n,GotoIf($[${H} < 18]?afternoon)
+ same => n,Goto(evening)
+ same => n(dawn),Playback(custom/zh-lingchen)       ; 凌晨
+ same => n,Goto(saytime,1)
+ same => n(morning),Playback(custom/zh-shangwu)     ; 上午
+ same => n,Goto(saytime,1)
+ same => n(noon),Playback(custom/zh-zhongwu)        ; 中午
+ same => n,Goto(saytime,1)
+ same => n(afternoon),Playback(custom/zh-xiawu)     ; 下午
+ same => n,Goto(saytime,1)
+ same => n(evening),Playback(custom/zh-wanshang)    ; 晚上
+ same => n,Goto(saytime,1)
+
+exten => saytime,1,SayNumber(${H12})
+ same => n,Playback(custom/zh-dian)                 ; 点
+ same => n,GotoIf($["${M}" = "00"]?secpart)
+ same => n,SayNumber(${M})
+ same => n,Playback(custom/zh-fen)                  ; 分
+ same => n,Goto(secpart,1)
+
+exten => secpart,1,GotoIf($["${S}" = "00"]?zheng)
+ same => n,SayNumber(${S})
+ same => n,Playback(custom/zh-miao)                 ; 秒
+ same => n,Goto(beep,1)
+
+exten => zheng,1,Playback(custom/zh-zheng)          ; 整
+ same => n,Goto(beep,1)
+
+exten => beep,1,Playback(beep)                     ; 哔~
+ same => n,Wait(5)                                  ; 等待5秒
+ same => n,Goto(s,start)                            ; 跳回上面重新获取时间并播报
+
+
+; ============================================================
+; *60 内置 Speaking Clock：补中文(zh_CN)分支
+; 背景：FreePBX 生成的 [sub-hr12format] 只内置 en/fr/de/ja 分支，
+;       语言为 zh_CN 的端点会回退到 en 分支，播出
+;       "at-tone-time-exactly + 英式 SayUnixTime"，中文听感不通顺。
+; 机制：[sub-hr12format] 顶部有 "include => sub-hr12format-custom"，
+;       故在本文件补 zh_CN 分支，即可被 DIALPLAN_EXISTS 命中并接管 *60。
+; 依赖：custom/zh-{lingchen,shangwu,zhongwu,xiawu,wanshang,dian,fen,miao,zheng,liang}
+; 维护：如需改文案，只动本段或对应 custom/zh-*.wav 即可，FreePBX 重新生成
+;       extensions_additional.conf 不会覆盖本文件。
+; ============================================================
+[sub-hr12format-custom]
+exten => zh_CN,1,Noop(zh-CN speaking clock, FutureTime=${FutureTime})
+ same => n,Playback(custom/beijing-shijian)
+ same => n,Set(CH=${STRFTIME(${FutureTime},,%H)})
+ same => n,Set(CM=${STRFTIME(${FutureTime},,%M)})
+ same => n,Set(CS=${STRFTIME(${FutureTime},,%S)})
+ same => n,Set(CH12=$[${CH} % 12])
+ same => n,GotoIf($[${CH12} = 0]?zzero,1)
+ same => n,Goto(zperiod,1)
+exten => zzero,1,Set(CH12=12)
+ same => n,Goto(zperiod,1)
+exten => zperiod,1,GotoIf($[${CH} < 6]?zdawn,1)
+ same => n,GotoIf($[${CH} < 12]?zam,1)
+ same => n,GotoIf($[${CH} < 13]?znoon,1)
+ same => n,GotoIf($[${CH} < 18]?zpm,1)
+ same => n,Goto(zeve,1)
+exten => zdawn,1,Playback(custom/zh-lingchen)
+ same => n,Goto(zsaytime,1)
+exten => zam,1,Playback(custom/zh-shangwu)
+ same => n,Goto(zsaytime,1)
+exten => znoon,1,Playback(custom/zh-zhongwu)
+ same => n,Goto(zsaytime,1)
+exten => zpm,1,Playback(custom/zh-xiawu)
+ same => n,Goto(zsaytime,1)
+exten => zeve,1,Playback(custom/zh-wanshang)
+ same => n,Goto(zsaytime,1)
+exten => zsaytime,1,GotoIf($[${CH12} = 2]?zliang,1)
+ same => n,SayNumber(${CH12})
+ same => n,Goto(zhour,1)
+exten => zliang,1,Playback(custom/zh-liang)
+ same => n,Goto(zhour,1)
+exten => zhour,1,Playback(custom/zh-dian)
+ same => n,GotoIf($["${CM}" = "00"]?zsec,1)
+ same => n,SayNumber(${CM})
+ same => n,Playback(custom/zh-fen)
+ same => n,Goto(zsec,1)
+exten => zsec,1,GotoIf($["${CS}" = "00"]?zzheng,1)
+ same => n,SayNumber(${CS})
+ same => n,Playback(custom/zh-miao)
+ same => n,Return()
+exten => zzheng,1,Playback(custom/zh-zheng)
+ same => n,Return()
+; 语言别名保险：万一通道语言是 cn 或 zh（非 zh_CN），同样走中文分支
+exten => cn,1,Goto(zh_CN,1)
+exten => zh,1,Goto(zh_CN,1)

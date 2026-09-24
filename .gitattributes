@@ -1,0 +1,17 @@
+# 统一换行符为 LF —— 这些脚本/配置都会部署到 Linux，CRLF 会导致
+# 「bad interpreter」或 Asterisk 解析异常
+* text eol=lf
+
+# WAV / PTX / 二进制不做任何换行处理
+*.wav  binary
+*.so   binary
+*.patch text eol=lf
+
+# 中文文档：GitHub 上按文本显示，不要当二进制
+*.md   text eol=lf
+*.sql  text eol=lf
+*.snippet text eol=lf
+
+# 永不导出
+/backup/    export-ignore
+*.tmp       export-ignore

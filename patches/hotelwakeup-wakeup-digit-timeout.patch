@@ -1,0 +1,17 @@
+--- a/wakeup
++++ b/wakeup
+@@ -85,13 +85,13 @@
+ 	$time = $hotelwakeup->sim_background("wakeupAdd", "0123456789", 3);
+ 	if(strlen($time) > 1)
+ 	{
+ 		$last = '';
+ 		if(strlen($time) < 4)
+ 		{
+-			$ret = $hotelwakeup->wait_for_digit(1000);
++			$ret = $hotelwakeup->wait_for_digit(6000);
+ 			if ($ret['result'] > 0)
+ 			{
+ 				$last = chr($ret['result']);
+ 				$last = $last != '#' ? $last : '';
+ 			}
+ 		}

@@ -1,0 +1,24 @@
+--- a/apps/app_voicemail.c
++++ b/apps/app_voicemail.c
+@@ -11145,15 +11145,19 @@
+ 				res = ast_play_and_wait(chan, "press");
+ 			if (!res)
+ 				res = ast_play_and_wait(chan, "digits/1");
+ 		}
+ 		if (!res)
+ 			res = ast_play_and_wait(chan, "vm-opts");
++		if (!res)
++			res = ast_waitfordigit(chan, 6000);
+ 		if (!res) {
+-			vms->starting = 0;
+-			return vm_instructions_en(chan, vmu, vms, skipadvanced, in_urgent, nodelete);
++			vms->repeats++;
++			if (vms->repeats > 2) {
++				res = 't';
++			}
+ 		}
+ 	}
+ 	return res;
+ }
+ 
+ static int vm_instructions(struct ast_channel *chan, struct ast_vm_user *vmu, struct vm_state *vms, int skipadvanced, int in_urgent, int nodelete)
